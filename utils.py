@@ -81,10 +81,6 @@ def model_id2name_cls(model_id: int):
         model_name = "meta-llama/Llama-3.2-1B-Instruct"
         model_cls = LLamaInstructLLM
         is_lora = False
-    elif model_id == 9:
-        model_name = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
-        model_cls = CodeDeepSeekLLM
-        is_lora = False
     else:
         raise ValueError(f"Model ID {model_id} is not valid")
     return model_name, model_cls, is_lora
