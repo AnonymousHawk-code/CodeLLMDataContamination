@@ -2,15 +2,12 @@ import pandas as pd
 from scipy import stats
 import numpy as np
 
-# Load CSV
 df = pd.read_csv("results/lc/PrePostSplit-infilled-sll-3.csv")
 
-# Group by model
 for model, group in df.groupby("Model"):
     x = group['Pre2'].to_numpy()
     y = group['Post'].to_numpy()
 
-    # Statistics
     stats_x = {
         "mean": np.mean(x),
         "std": np.std(x, ddof=1),
@@ -22,7 +19,6 @@ for model, group in df.groupby("Model"):
         "median": np.median(y)
     }
 
-    # Paired t-test (since values come from the same row)
     t_stat, p_val = stats.ttest_ind(x, y, equal_var=False)
 
     print(f"\nModel: {model}")
