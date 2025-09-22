@@ -22,9 +22,17 @@ In this experiment, we use Leetcode data to determine the accuracy of code LLMs 
 
 ```python evalution.py --model_id=2 --data_id=2 --task_id=0```
 
-3. Run sampling and statistics calculation (pre=0 -> Pre-Cutoff, pre=1 -> Post-Cutoff)
+3. Run sampling and statistics calculation (Change the default arguments to test different complexities/buckets)
 
-```python leetcode_evaluate.py --model_id=2 --pre=0```
+```python lc_complexity_analysis.py```
+
+Following complexities and buckets supported:
+
+| Complexity | Buckets |
+| ---------- | ------- |
+| ml (Manually Labeled) | Easy, Medium, Hard |
+| ptl (Prompt Token Length) | 0-10 |
+| sl (Solution Length) | 0-10 |
 
 The supported models are listed in ```utils.py/model_id2name_cls```
 
