@@ -20,7 +20,7 @@ from utils import (get_model_name,
                    PASS_AT_K_DIR,
                    EXE_RES_DIR)
 
-PY_BIN = "/home/pp2903/miniconda3/envs/research/bin/python"
+PY_BIN = "{INSERT PY BIN}"
 random.seed(65)
 
 def estimator(n: int, c: int, k: int) -> float:
