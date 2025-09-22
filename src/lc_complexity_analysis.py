@@ -71,7 +71,7 @@ def main(args):
         # sl_count[tc] += 1
         if tc == bucket:
             pre_cp.append(problem)
-    print(f"Sample size of Post Problems: {len(pre_cp)}")
+    print(f"Sample size of Pre Problems: {len(pre_cp)}")
 
     post_cp = []
     pt_count = [0] * 11
@@ -85,7 +85,7 @@ def main(args):
             tc = problem["config"]["difficulty"]
         if tc == bucket:
             post_cp.append(problem)
-    print(f"Sample size of Pre Problems: {len(post_cp)}")
+    print(f"Sample size of Post Problems: {len(post_cp)}")
 
     # print(pt_count)
     # print(sl_count)
