@@ -52,4 +52,16 @@ This saves a model to the disk and now we can use this finetuned model and test 
 
 ## RQ3 Experiment
 
-In this experiment, we compare the performance of dynamic benchmarking strategies such as mutations and DyCodeEval to our temporal cutoff accuracies to see how well these strategies perform.
+In this experiment, we compare the performance of dynamic benchmarking strategies such as mutations and DyCodeEval to our temporal cutoff accuracies to see how well these strategies perform. To assess the performance, we can use the following 2 steps
+
+1. Generate the code (Change the model id, dataset based off which mutation or dynamic benchmark)
+
+Sample Command (Code generation using Deepseek-Coder on Dynamic HumanEval benchmark)
+
+```python generate_code.py --model_id=2 --data_id=3 --task_id=0```
+
+2. Evaluate the code using same parameters
+
+```python evalution.py --model_id=2 --data_id=3 --task_id=0```
+
+Supported mutations and dynamic benchmarks are listeed in ```utils.py/load_dataset```
