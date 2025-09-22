@@ -153,12 +153,7 @@ if __name__ == '__main__':
     parser.add_argument('--lora_data_id', type=int, default=0) # trained data
     parser.add_argument('--partial_id', type=int, default=0)
     parser.add_argument('--data_id', type=int, default=5) # generated data
-    parser.add_argument('--task-id', type=int, default=0) # code gen: 0, code infill: 1, code fix: 2, code trans: 3
-
-    # ONLY USED FOR LEETCODE DATASET
-    # parser.add_argument('--ts_id', type=int, default=-1) # timestamp interval
-    # parser.add_argument('--diff_id', type=int, default=-1) # difficulty
-    # parser.add_argument('--year', type=int, default=2025)
+    parser.add_argument('--task-id', type=int, default=0) # code gen: 0, code infill: 1
 
     parser.add_argument('--override', type=bool, default=True)
 
@@ -166,7 +161,3 @@ if __name__ == '__main__':
     parser.add_argument('--top_p', type=float, default=0.95)
     args = parser.parse_args()
     main(args)
-
-    # for i in range(20, 28):
-    #     args.data_id = i
-    #     main(args)
