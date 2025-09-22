@@ -179,7 +179,3 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     main(args)
-
-    # for i in range(20,28):
-    #     args.data_id = i
-    #     main(args)
