@@ -38,7 +38,17 @@ The supported models are listed in ```utils.py/model_id2name_cls```
 
 ## RQ2 Experiment
 
-In this experiment, we focus on assessing the effectiveness of MIA (Membership-Inference Attacks) in identifying contamination in code LLMs. 
+In this experiment, we focus on assessing the effectiveness of MIA (Membership-Inference Attacks) in identifying contamination in code LLMs. To do this, we first create our training and testing datasets which each consist of one half HumanEval one half MBPP.
+
+Run ```python split_humaneval_mbpp.py```
+
+Now, these datasets are saved to disk. We are going to take our training dataset "combined_dataset_1" and finetune it on a model. We use this dataset plus the leetcode dataset to simulate a large amount of training data on the model.
+
+```python overfit.py```
+
+This saves a model to the disk and now we can use this finetuned model and test the AUC difference between the two combined datasets based on different MIA attacks.
+
+```python test_mia.py```
 
 ## RQ3 Experiment
 
